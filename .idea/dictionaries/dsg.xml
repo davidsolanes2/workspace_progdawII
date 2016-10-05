@@ -2,6 +2,7 @@
   <dictionary name="dsg">
     <words>
       <w>campo</w>
+      <w>codificador</w>
       <w>colección</w>
       <w>consultar</w>
       <w>duracion</w>
@@ -9,6 +10,7 @@
       <w>entrada</w>
       <w>existe</w>
       <w>favorita</w>
+      <w>fichero</w>
       <w>ningun</w>
       <w>ningún</w>
       <w>pedirinformacion</w>
