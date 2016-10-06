@@ -8,16 +8,24 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import UF1.cine.fichero;
 
 
 public class cine {
 
     private static ArrayList<cine_01> micine = new ArrayList<>();
 
+    private static fichero miFichero;
+
     static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 
 
     public static void main(String[] args) {
+
+        miFichero = new fichero("peliculas.xml");
+
+        miFichero = (fichero) miFichero.read();
+
         boolean error;
         int opcio = 0;
         do {
@@ -62,8 +70,6 @@ public class cine {
 
     }
 
-
-
     private static class menu_cine {
         public static int menu() throws IOException {
 
@@ -83,7 +89,6 @@ public class cine {
         }
 
     }
-
 
     public static void altaRegistro() {
         boolean error = true;
@@ -207,5 +212,4 @@ public class cine {
     }
 }
 
-//crear/cargar fichero, guardar fichero
 //exception para no dejar campos en blanco
