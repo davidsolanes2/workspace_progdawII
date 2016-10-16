@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import UF1.cine.fichero;
 
 
 public class cine {
@@ -18,7 +17,6 @@ public class cine {
     private static fichero miFichero;
 
     static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
-
 
     public static void main(String[] args) {
 
@@ -130,6 +128,8 @@ public class cine {
                 error = false;
             }
 
+            miFichero.grabar(micine);
+
             //comprobar que no se repiten los codigos
 
         }while(error = true);
@@ -210,6 +210,19 @@ public class cine {
 
         return aux_titulo;
     }
+
+
+    /*public static String cadenaNoVacia(String msg) {
+        String cadena;
+        do{
+            cadena = InputData.altaRegistro(msg);
+            if (cadena.equals("")) {
+                System.out.println("El Campo no puede estar en blanco");
+            }
+        }while (cadena.equals(""));
+
+        return cadena;
+    }*/
 }
 
 //exception para no dejar campos en blanco

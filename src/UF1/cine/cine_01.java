@@ -6,7 +6,7 @@ package UF1.cine;
 
 import java.io.*;
 
-public class cine_01 implements Comparable, Serializable {
+public class cine_01 implements Serializable {
 
     private String codigo;
     private String titulo;
@@ -88,24 +88,24 @@ public class cine_01 implements Comparable, Serializable {
 
     @Override
     public String toString() {
-        return "cine_01{" +
+        String texto = "Peliculas{" +
                 "codigo='" + codigo + '\'' +
                 ", titulo='" + titulo + '\'' +
                 ", director='" + director + '\'' +
                 ", minutos=" + minutos +
                 ", genero='" + genero + '\'' +
                 ", valoracion=" + valoracion +
-                ", visto=" + visto +
                 '}';
+
+        /*if (visto) {
+            texto += "VISTA";
+        }
+        else {
+            texto += " POR VER";
+        }*/
+
+        texto += visto ? "VISTA" : "POR VER";
+        return texto;
     }
-
-    @Override
-    public int compareTo(Object k) {
-        cine_01 c = (cine_01) k;
-        return  titulo.compareTo(c.getCodigo());
-
-    }
-
-
 
 }
