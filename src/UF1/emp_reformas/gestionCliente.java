@@ -4,33 +4,32 @@ package UF1.emp_reformas;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 /*
  * Created by dsg on 13/10/16.
  */
 
-public class gestion_cliente {
+public class gestionCliente {
 
-    private static Lista_presupuesto misPresupuestos;
-
-    private static Lista_cliente misClientes;
+    private static listaPresupuesto misPresupuestos;
+    private static listaCliente misClientes;
 
     private static fichero miFichero;
 
-    static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
+    //static BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
 
         miFichero = new fichero("clientes.xml");
 
-        misClientes = (Lista_cliente) miFichero.read();
+        misClientes = (listaCliente) miFichero.read();
 
-        if (misClientes == null) {
-            misClientes = new Lista_cliente();
-            misPresupuestos = new Lista_presupuesto();
+
+        if (misClientes == null && misPresupuestos == null) {
+            misClientes = new listaCliente();
+            misPresupuestos = new listaPresupuesto();
         }
 
 
@@ -42,7 +41,7 @@ public class gestion_cliente {
 
             switch (opcio) {
                 case 1:
-                    altaCliente();
+                    altaClientes();
                     break;
                 case 2:
 
@@ -74,33 +73,46 @@ public class gestion_cliente {
 
     }
 
-    public static String pedirInformacion(String mensaje) {
-        String aux_titulo = null;
-        try {
-            System.out.println(mensaje);
-            aux_titulo = buffer.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return aux_titulo;
-    }
-
-    private static void altaCliente() {
+    private static void altaClientes() {
         boolean existe = false;
-        String aux_01="";
+        String aux_01;
         do {
-            aux_01 = pedirInformacion("Nº telefono : ");
-
-
-
+            aux_01 = InputData.pedirCadena("Nº telefono : ");
+            cliente aux = new cliente();
+            aux.setTelefono(aux_01);
+            existe = misClientes.existe(aux);
+            if (existe) {
+                System.out.println("Este telefono ya existe");
+            }
         }while(existe);
 
+        String nombre = InputData.pedirCadena("Nombre   : ");
+        String apellido = InputData.pedirCadena("Apellido : ");
+        String telefono = aux_01;
+        boolean vip = false;
+        String respuesta = "";
+        do {
+            respuesta = InputData.pedirCadena("Es Cliente Vip (Si/No) ? ");
+            if (respuesta.equalsIgnoreCase("si")) {
+                vip = true;
+            }
+            else if (respuesta.equalsIgnoreCase("no")) {
+                vip = false;
+            }
+            else {
+                System.out.println("Respuesta incorrecta");
+            }
+        }while (!respuesta.equalsIgnoreCase("s") && !respuesta.equalsIgnoreCase("n"));
+
+        cliente c = new cliente(nombre, apellido, telefono, vip);
+        misClientes.altaCliente(c);
+        miFichero.grabar(misClientes);
+        //miFichero.grabar(misPresupuestos);
     }
 
     private static class menu_clientes {
         public static int menu() throws IOException {
-
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
             int opcio;
             System.out.println("\n\t             GESTION TIENDA ");
             System.out.println("-----------------------------------------------");

@@ -16,7 +16,7 @@ public class InputData {
         boolean error;
         do {
             try {
-                System.out.println(mensaje);
+                System.out.print(mensaje);
                 cadena = br.readLine();
                 error = false;
             } catch (IOException ex) {
@@ -33,7 +33,7 @@ public class InputData {
         boolean error;
         do {
             try {
-                System.out.println(mensaje);
+                System.out.print(mensaje);
                 numero = Integer.parseInt(br.readLine());
                 error = false;
             } catch (IOException ex) {
@@ -53,7 +53,7 @@ public class InputData {
         boolean error;
         do {
             try {
-                System.out.println(mensaje);
+                System.out.print(mensaje);
                 numero = Double.parseDouble(br.readLine());
                 error = false;
             } catch (IOException ex) {

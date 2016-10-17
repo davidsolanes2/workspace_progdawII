@@ -10,10 +10,17 @@ public class cliente implements Serializable{
     private String nombre;
     private String apellido;
     private String telefono;
-    private boolean vip = false;
+    private boolean vip;
 
     public cliente() {
 
+    }
+
+    public cliente(String nombre, String apellido, String telefono, boolean vip) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.telefono = telefono;
+        this.vip = vip;
     }
 
     public String getNombre() {
@@ -42,14 +49,8 @@ public class cliente implements Serializable{
 
     public boolean isVip() { return vip;}
 
-    public void setVip(String vip) { this.vip = false; }
+    public void setVip(boolean vip) { this.vip = vip; }
 
-    public cliente(String nombre, String apellido, String telefono, boolean vip) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-        this.vip = vip;
-    }
 
     @Override
     public String toString() {

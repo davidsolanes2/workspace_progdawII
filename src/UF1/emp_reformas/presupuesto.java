@@ -16,6 +16,13 @@ public class presupuesto implements Serializable {
 
     }
 
+    public presupuesto(String codigo, String concepto, double precio_tot, String estado) {
+        this.codigo = codigo;
+        this.concepto = concepto;
+        this.precio_tot = precio_tot;
+        this.estado = estado;
+    }
+
     public String getCodigo() {
         return codigo;
     }
@@ -48,12 +55,7 @@ public class presupuesto implements Serializable {
         this.estado = estado;
     }
 
-    public presupuesto(String codigo, String concepto, double precio_tot, String estado) {
-        this.codigo = codigo;
-        this.concepto = concepto;
-        this.precio_tot = precio_tot;
-        this.estado = estado;
-    }
+
 
     @Override
     public String toString() {

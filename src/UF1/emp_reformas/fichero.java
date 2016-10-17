@@ -36,7 +36,7 @@ public class fichero {
             XMLDecoder decodificador = new XMLDecoder(new FileInputStream(new File(nombre)));
             return decodificador.readObject();
         } catch (FileNotFoundException ex) {
-            System.out.println("El fichero no eiste");
+            System.out.println("El fichero no existe");
             return null;
         }
     }

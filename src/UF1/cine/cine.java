@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class cine {
 
-    private static ArrayList<cine_01> micine = new ArrayList<>();
+    private static ArrayList<cine_01> micine = new ArrayList<>();  //revisar no es correcto
 
     private static fichero miFichero;
 
