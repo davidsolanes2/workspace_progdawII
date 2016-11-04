@@ -12,6 +12,7 @@ public class presupuesto implements Serializable {
     private double precio_tot;
     private String estado;
 
+
     public presupuesto() {
 
     }
@@ -21,6 +22,7 @@ public class presupuesto implements Serializable {
         this.concepto = concepto;
         this.precio_tot = precio_tot;
         this.estado = estado;
+
     }
 
     public String getCodigo() {

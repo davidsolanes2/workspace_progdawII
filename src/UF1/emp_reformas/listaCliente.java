@@ -9,32 +9,40 @@ import java.util.ArrayList;
 
 public class listaCliente implements Serializable {
 
-    private ArrayList<cliente> lista;
+    private static ArrayList<cliente> listaCliente;
 
-    public listaCliente() {
-        lista = new ArrayList<>();
+    listaCliente() {
+        listaCliente = new ArrayList<>();
     }
 
-    public void altaCliente(cliente c) {
-        lista.add(c);
-    }
-
-    public boolean existe(cliente c) {
-        for (cliente aux : lista) {
-            if (c.getTelefono().equalsIgnoreCase(aux.getTelefono())) {
-                return true;
-            }
-        }
-        return  false;
+    void altaCliente(cliente c) {
+        listaCliente.add(c);
     }
 
     public ArrayList<cliente> getLista() {
-        return lista;
+        return listaCliente;
     }
 
     public void setLista(ArrayList<cliente> lista) {
-        this.lista = lista;
+        listaCliente = lista;
     }
 
+    public boolean existe(String telefono) {
+        for (cliente c : listaCliente) {
+            if (c.getTelefono().equalsIgnoreCase(telefono)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public cliente obtenerTelefono(String telefono) {
+        for (cliente c : listaCliente) {
+            if (telefono.equalsIgnoreCase(telefono)) {
+                return c;
+            }
+        }
+        return null;
+    }
 
 }

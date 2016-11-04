@@ -11,6 +11,7 @@ public class cliente implements Serializable{
     private String apellido;
     private String telefono;
     private boolean vip;
+    private listaPresupuesto lista;
 
     public cliente() {
 
@@ -21,6 +22,8 @@ public class cliente implements Serializable{
         this.apellido = apellido;
         this.telefono = telefono;
         this.vip = vip;
+        this.lista = new listaPresupuesto();
+
     }
 
     public String getNombre() {
@@ -51,6 +54,13 @@ public class cliente implements Serializable{
 
     public void setVip(boolean vip) { this.vip = vip; }
 
+    public listaPresupuesto getLista() {
+        return lista;
+    }
+
+    public void setLista(listaPresupuesto lista) {
+        this.lista = lista;
+    }
 
     @Override
     public String toString() {

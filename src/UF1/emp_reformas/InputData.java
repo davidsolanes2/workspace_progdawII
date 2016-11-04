@@ -16,9 +16,15 @@ public class InputData {
         boolean error;
         do {
             try {
-                System.out.print(mensaje);
-                cadena = br.readLine();
-                error = false;
+                do {
+                    System.out.print(mensaje);
+                    cadena = br.readLine();
+                    error = false;
+                    if (cadena.equalsIgnoreCase("")) {
+                        System.out.println("No se puede dejar en blanco");
+                    }
+                }while(cadena.equalsIgnoreCase(""));
+
             } catch (IOException ex) {
                 System.out.println("Error entrada salida");
                 error = true;
