@@ -31,6 +31,10 @@ public class gestionEmpresa {
                         break;
                     case 2:
                         break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
                     case 8:
                         System.out.println("Cerrando el sistema");
                         break;

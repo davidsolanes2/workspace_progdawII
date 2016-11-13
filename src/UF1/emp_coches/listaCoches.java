@@ -23,4 +23,22 @@ public class listaCoches implements Serializable {
         this.listaCoches = listaCoches;
     }
 
+    public boolean existe(String matricula) {
+        for (vehiculos v : listaCoches) {
+            if (v.getMatricula().equalsIgnoreCase(matricula)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public vehiculos obtenerMatricula(String matricula) {
+        for (vehiculos v : listaCoches) {
+            if (matricula.equalsIgnoreCase(matricula)) {
+                return v;
+            }
+        }
+        return null;
+    }
+
 }
