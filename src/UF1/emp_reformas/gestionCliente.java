@@ -22,49 +22,49 @@ public class gestionCliente {
         if (misClientes == null) {
             misClientes = new listaCliente();
         }
-        int opcio=0;
-        boolean error;
-        do {
-            try {
-                opcio = menu_clientes.menu();
-                while (opcio != 8) {
-                    switch (opcio) {
-                        case 1:
-                            altaCliente();
-                            break;
-                        case 2:
-                            altaPresupuesto();
-                            break;
-                        case 3:
-                            presupuestosPendientes();
-                            break;
-                        case 4:
-                            listadoPresupuestosClientes();
-                            break;
-                        case 5:
-                            presupuestosRechazados();
-                            break;
-                        case 6:
-                            listadoClientes();
-                            break;
-                        case 7:
-                            cambiarEstado();
-                            break;
-                        case 8:
-                            System.out.println("Cerrando el sistema");
-                            break;
-                        default:
-                            System.out.println("\nOpcion incorrecta, seleccione de 1 a 8");
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (NumberFormatException ex) {
-                System.out.println("\nNo has introducido un numero entero");
-                error = false;
-            }
 
-        }while(error = true); //controlar que no puedan ponerme caracter alfanumerico
+        boolean error;
+        int opcio = 0;
+        do try {
+
+            while (opcio != 8) {
+                opcio = menu_clientes.menu();
+                switch (opcio) {
+                    case 1:
+                        altaCliente();
+                        break;
+                    case 2:
+                        altaPresupuesto();
+                        break;
+                    case 3:
+                        presupuestosPendientes();
+                        break;
+                    case 4:
+                        listadoPresupuestosClientes();
+                        break;
+                    case 5:
+                        presupuestosRechazados();
+                        break;
+                    case 6:
+                        listadoClientes();
+                        break;
+                    case 7:
+                        cambiarEstado();
+                        break;
+                    case 8:
+                        System.out.println("Cerrando el sistema");
+                        break;
+                    default:
+                        System.out.println("\nOpcion incorrecta, seleccione de 1 a 8");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            error = false;
+        } catch (NumberFormatException ex) {
+            System.out.println("\nNo has introducido un numero entero");
+            error = false;
+        } while(true && opcio != 8); //controlar que no puedan ponerme caracter alfanumerico
     }
 
     public static void altaCliente() {
@@ -109,7 +109,7 @@ public class gestionCliente {
             String num_01 = InputData.pedirCadena("Numero del presupuesto : ");
             for ( cliente c : misClientes.getLista()) {
                 for (presupuesto p : c.getLista().getLista_p()){
-                    if (p.getCodigo() == num_01) {
+                    if (Objects.equals(p.getCodigo(), num_01)) {
                         System.out.println("Este numero ya esta dado de alta");
                     }
                     else if (!Objects.equals(p.getCodigo(), num_01)) {
@@ -133,11 +133,9 @@ public class gestionCliente {
 
     private static void presupuestosPendientes() {
         for (cliente c : misClientes.getLista()) {
-            for (presupuesto p : c.getLista().getLista_p()){
-                if (p.getEstado().equalsIgnoreCase("P")) {
-                    System.out.println("El Cliente " + c.getNombre() + "" + c.getApellido() + " esta " + p);
-                }
-            }
+            c.getLista().getLista_p().stream().filter(p -> p.getEstado().equalsIgnoreCase("P")).forEach(p -> {
+                System.out.println("El Cliente " + c.getNombre() + "" + c.getApellido() + " esta " + p);
+            });
         }
     }
 

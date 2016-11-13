@@ -19,16 +19,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP">
-        <CLASSES>
-          <root url="file:///usr/share/php7/PEAR" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file:///usr/share/php7/PEAR" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

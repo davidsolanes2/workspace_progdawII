@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 public class listaCliente implements Serializable {
 
-    private static ArrayList<cliente> listaCliente;
+    private ArrayList<cliente> listaCliente;
 
-    listaCliente() {
+    public listaCliente() {
         listaCliente = new ArrayList<>();
     }
 
