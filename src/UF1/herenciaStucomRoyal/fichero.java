@@ -1,4 +1,4 @@
-package UF1.emp_coches;
+package UF1.herenciaStucomRoyal;
 
 /*
  * Created by dsg on 5/10/16.

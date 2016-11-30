@@ -1,4 +1,4 @@
-package UF1.emp_coches;
+package UF1.empCoches;
 
 /*
  * Created by david on 10/11/16.
@@ -28,6 +28,9 @@ public class gestionEmpresa {
                 opcio = menu_tienda.menu();
                 switch (opcio) {
                     case 1:
+                        altaVehiculo();
+                        System.out.println("Ficha del Vehiculo");
+                        System.out.println("------------------");
                         break;
                     case 2:
                         break;
@@ -50,6 +53,19 @@ public class gestionEmpresa {
             error = false;
 
         }while(true && opcio !=8);
+    }
+
+    public static void altaVehiculo() {
+        boolean existe = false;
+
+        String aux = InputData.pedirCadena("Matricula : ");
+        if (misVehiculos.existe(aux)) {
+            System.out.println("Esta matricula ya existe");
+        }
+        else {
+            String tipo = InputData.pedirCadena("Categoria : ");
+            int pax = InputData.pedirEntero("Nº plazas : ");
+        }
     }
 
     private static class menu_tienda {
