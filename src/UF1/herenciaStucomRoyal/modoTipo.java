@@ -4,7 +4,6 @@ package UF1.herenciaStucomRoyal;
  * Created by david on 1/12/16.
  */
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class modoTipo extends tipoCartas {

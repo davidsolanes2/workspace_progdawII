@@ -10,16 +10,16 @@ import java.util.Arrays;
 public class cartas implements Serializable {
 
     private String nombre;
-    private int elixir[] = new int[4];
+    private int elixir;
     private int vida;
 
-    public cartas(String nombre, int[] elixir, int vida) {
+    public cartas() {}
+
+    public cartas(String nombre, int elixir, int vida) {
         this.nombre = nombre;
         this.elixir = elixir;
         this.vida = vida;
     }
-
-    cartas() {}
 
     public String getNombre() {
         return nombre;
@@ -29,11 +29,11 @@ public class cartas implements Serializable {
         this.nombre = nombre;
     }
 
-    public int[] getElixir() {
+    public int getElixir() {
         return elixir;
     }
 
-    public void setElixir(int[] elixir) {
+    public void setElixir(int elixir) {
         this.elixir = elixir;
     }
 
@@ -49,7 +49,7 @@ public class cartas implements Serializable {
     public String toString() {
         return "cartas{" +
                 "nombre='" + nombre + '\'' +
-                ", elixir=" + Arrays.toString(elixir) +
+                ", elixir=" + elixir +
                 ", vida=" + vida +
                 '}';
     }
