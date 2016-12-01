@@ -18,4 +18,6 @@ public class listaJugador implements Serializable {
     public ArrayList<jugador> getListaJugador() {
         return listaJugador;
     }
+
+
 }

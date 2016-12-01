@@ -9,6 +9,7 @@ public class jugador {
     private String password;
     private Integer trofeos;
 
+
     public jugador(String nombreJugador, String password, Integer trofeos) {
         this.nombreJugador = nombreJugador;
         this.password = password;

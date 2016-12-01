@@ -10,12 +10,47 @@ import java.io.InputStreamReader;
 
 public class main {
 
-    private static fichero MiFichero;
+    private static fichero miFichero;
     private static listaJugador miJuego;
 
 
     public static void main(String[] args) {
+        miFichero = new fichero("juego.xml");
+        miJuego =(listaJugador) miFichero.read();
+        if (miJuego == null) {
+            miJuego = new listaJugador();
+        }
 
+        boolean error;
+        int opcio = 0;
+        do try {
+            while (opcio !=8) {
+                opcio = menu_cartas.menu();
+                switch (opcio) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 8:
+                        System.out.println("Cerrando el sistema");
+                        break;
+                    default:
+                        System.out.println("\nOpcion incrrecta, seleccione de 1 a 8");
+                }
+            }
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            error = false;
+        } catch (NumberFormatException ex) {
+            System.out.println("\nNo has introducido un numero entero");
+            error = false;
+        } while(true && opcio != 8);
 
     }
 

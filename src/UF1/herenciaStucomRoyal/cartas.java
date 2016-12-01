@@ -4,17 +4,22 @@ package UF1.herenciaStucomRoyal;
  * Created by david on 24/11/16.
  */
 
-public class cartas {
+import java.io.Serializable;
+import java.util.Arrays;
+
+public class cartas implements Serializable {
 
     private String nombre;
-    private Integer exilir;
-    private Integer vida;
+    private int elixir[] = new int[4];
+    private int vida;
 
-    public cartas(String nombre, Integer exilir, Integer vida) {
+    public cartas(String nombre, int[] elixir, int vida) {
         this.nombre = nombre;
-        this.exilir = exilir;
+        this.elixir = elixir;
         this.vida = vida;
     }
+
+    cartas() {}
 
     public String getNombre() {
         return nombre;
@@ -24,19 +29,19 @@ public class cartas {
         this.nombre = nombre;
     }
 
-    public Integer getExilir() {
-        return exilir;
+    public int[] getElixir() {
+        return elixir;
     }
 
-    public void setExilir(Integer exilir) {
-        this.exilir = exilir;
+    public void setElixir(int[] elixir) {
+        this.elixir = elixir;
     }
 
-    public Integer getVida() {
+    public int getVida() {
         return vida;
     }
 
-    public void setVida(Integer vida) {
+    public void setVida(int vida) {
         this.vida = vida;
     }
 
@@ -44,9 +49,8 @@ public class cartas {
     public String toString() {
         return "cartas{" +
                 "nombre='" + nombre + '\'' +
-                ", exilir=" + exilir +
+                ", elixir=" + Arrays.toString(elixir) +
                 ", vida=" + vida +
                 '}';
     }
-
 }
