@@ -5,7 +5,6 @@ package UF1.herenciaStucomRoyal;
  */
 
 import java.io.Serializable;
-import java.util.Arrays;
 
 public class cartas implements Serializable {
 

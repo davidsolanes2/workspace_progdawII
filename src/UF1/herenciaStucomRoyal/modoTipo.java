@@ -8,25 +8,25 @@ import java.util.Arrays;
 
 public class modoTipo extends tipoCartas {
 
-    private String[] modo = new String[2];
+    private String modo;
 
-    public modoTipo(String nombre, int[] elixir, int vida, String[] tipo, String[] modo) {
+    public modoTipo(String nombre, int elixir, int vida, String tipo, String modo) {
         super(nombre, elixir, vida, tipo);
         this.modo = modo;
     }
 
-    public String[] getModo() {
+    public String getModo() {
         return modo;
     }
 
-    public void setModo(String[] modo) {
+    public void setModo(String modo) {
         this.modo = modo;
     }
 
     @Override
     public String toString() {
         return "modoTipo{" +
-                "modo=" + Arrays.toString(modo) +
+                "modo=" + modo +
                 '}';
     }
 }
