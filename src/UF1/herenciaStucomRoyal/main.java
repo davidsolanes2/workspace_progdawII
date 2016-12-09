@@ -4,13 +4,9 @@ package UF1.herenciaStucomRoyal;
  * Created by david on 24/11/16.
  */
 
-import UF1.empReformas.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import static UF1.herenciaStucomRoyal.principal.miJuego;
 
 public class main {
 

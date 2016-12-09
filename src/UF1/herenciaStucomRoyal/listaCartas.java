@@ -9,15 +9,15 @@ import java.util.ArrayList;
 
 public class listaCartas implements Serializable {
 
-        private ArrayList<cartas> listaCartas;
+        private ArrayList<modoTipo> listaCartas;
 
         public listaCartas() { listaCartas = new ArrayList<>(); }
 
-        void altaCartas (cartas c) { listaCartas.add(c); }
+        //void altaCartas (modoTipo mT) { listaCartas.add(mT); }
 
-        public ArrayList<cartas> getListaCartas() {return listaCartas; }
+        public ArrayList<modoTipo> getListaCartas() {return listaCartas; }
 
-        public void setListaCartas(ArrayList<cartas> listaCartas) {
+        public void setListaCartas(ArrayList<modoTipo> listaCartas) {
                 this.listaCartas = listaCartas;
         }
 

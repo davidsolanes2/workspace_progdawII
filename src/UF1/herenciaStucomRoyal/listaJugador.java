@@ -13,7 +13,7 @@ public class listaJugador implements Serializable {
 
     public listaJugador() { listaJugador = new ArrayList<>(); }
 
-    void altaJugador(jugador j) { listaJugador.add(j); }
+    //void altaJugador(jugador j) { listaJugador.add(j); }
 
     public ArrayList<jugador> getListaJugador() {
         return listaJugador;

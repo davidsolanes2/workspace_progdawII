@@ -4,9 +4,9 @@ package UF1.herenciaStucomRoyal;
  * Created by david on 1/12/16.
  */
 
-import java.util.Arrays;
+import java.io.Serializable;
 
-public class tipoCartas extends cartas {
+public class tipoCartas extends cartas implements Serializable {
 
     private String tipo;
 
