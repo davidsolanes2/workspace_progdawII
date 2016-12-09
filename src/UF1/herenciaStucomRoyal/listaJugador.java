@@ -19,5 +19,17 @@ public class listaJugador implements Serializable {
         return listaJugador;
     }
 
+    public void setListaJugador(ArrayList<jugador> listaJugador) {
+        this.listaJugador = listaJugador;
+    }
+
+    public  boolean existe_01(String nom_01, String pass_01) {
+        for (jugador j : listaJugador) {
+            if (j.getNombreJugador().equalsIgnoreCase(nom_01) && j.getPassword().equalsIgnoreCase(pass_01)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

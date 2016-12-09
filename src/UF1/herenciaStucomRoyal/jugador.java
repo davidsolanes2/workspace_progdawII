@@ -4,9 +4,11 @@ package UF1.herenciaStucomRoyal;
  * Created by david on 24/11/16.
  */
 
-public class jugador {
-    private String nombreJugador;
-    private String password;
+import java.io.Serializable;
+
+public class jugador implements Serializable {
+    public  String nombreJugador;
+    public  String password;
     private Integer trofeos;
     private listaCartas listaCartas;
 
@@ -17,6 +19,8 @@ public class jugador {
         this.password = password;
         this.trofeos = trofeos;
         this.listaCartas = new listaCartas();
+
+        //cartas de cada jugador y cartas de la baraja
     }
 
     public String getNombreJugador() {

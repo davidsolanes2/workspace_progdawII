@@ -17,4 +17,8 @@ public class listaCartas implements Serializable {
 
         public ArrayList<cartas> getListaCartas() {return listaCartas; }
 
+        public void setListaCartas(ArrayList<cartas> listaCartas) {
+                this.listaCartas = listaCartas;
+        }
+
 }
