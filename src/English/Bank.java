@@ -3,12 +3,26 @@ package English;
 /*
  * Created by david on 22/11/16.
  */
-public class Bank {
+
+import java.io.Serializable;
+
+public class Bank implements Serializable{
+
     private String account;
-    private Double balance;
+    private double balance = 0.00;
     private String name;
     private String email;
     private String phone;
+
+    public Bank() {}
+
+    public Bank(String account, double balance, String name, String email, String phone) {
+        this.account = account;
+        this.balance = balance;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
     public String getAccount() {
         return account;
@@ -48,5 +62,16 @@ public class Bank {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "account='" + account + '\'' +
+                ", balance=" + balance +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }
